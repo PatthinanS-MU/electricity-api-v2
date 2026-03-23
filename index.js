@@ -68,7 +68,7 @@ app.get("/api/usage/history/:province", (req, res) => { // Endpoint is overlappi
   const result = data.filter(
     (d) => d.province_name.toLowerCase() === province.toLowerCase(),
   );
-  res.json(result);
+  res.json({ error: "Endpoint is overlapping with users history, consider changing to /api/usage/history/province/:province" });
 });
 
 // 6. API: User history for a specific province
